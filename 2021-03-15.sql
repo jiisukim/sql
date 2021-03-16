@@ -165,7 +165,7 @@ WHERE deptno  != 30;
 ★★ NOT IN 연산자 사용시 주의점 : 비교값중에 NULL이 포함되면 데이터가 조회되지 않는다. ★★
 IN은 OR , NOT IN은 AND
 WHERE mgr IN (7698,7839,NULL);  mgr이 7698 이거나 7839이거나 NULL(근데 널값은 안찾아짐)
-WHERE mgr NOT IN (7698,7839,NULL);  mgr이 7698이 아니고 and 7839이아니고 and NULL도아님(근데 널값은 안찾아짐)
+WHERE mgr NOT IN (7698,7839,NULL);  mgr이 7698이 아니고 and 7839이아니고 and NULL도아님(널값이 안찾아지고 AND 이기 때문에 0)
 
 
 SELECT *
