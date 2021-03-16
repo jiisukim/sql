@@ -91,8 +91,8 @@ SELECT table_name
 FROM user_tables;   --내가 만든것이 아닌 오라클에서 관리하는 프로그램
 
 
-SELECT 'SELECT * FROM '||table_name || ';' query,
-         CONCAT(CONCAT('SELECT * FROM ',table_name),';') query2     
+SELECT 'SELECT * FROM '||table_name || ';', 
+    CONCAT(CONCAT('SELECT * FROM ',table_name),';')      
 FROM user_tables;
 
 ----부서번호가 10인 직원들만 조회
