@@ -216,5 +216,7 @@ where 13]
 SELECT *
 FROM emp
 WHERE job = 'SALESMAN'
-    OR empno BETWEEN 7800 AND 7899;
+    OR empno BETWEEN 7800 AND 7899
+    OR empno BETWEEN 78 AND 78
+    OR empno BETWEEN 780 AND 789;
 
