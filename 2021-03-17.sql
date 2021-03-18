@@ -20,7 +20,7 @@ Function
  --- LENGTH : 문자열 길이
  --- INSTR : 특정 문자열에 내가 찾고자하는 것이 있는지
  --- LPAD|RPAD : 특정 문자열 집어넣음
- --- TRIM : 
+ --- TRIM : 공백을 제거 , 문자열의 앞과, 뒷부분에 있는 공백만
  --- REPLACE : 치환
  --- DUAL table 
     -sys계정에 있는 테이블
