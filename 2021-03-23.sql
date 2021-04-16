@@ -13,10 +13,26 @@ WHERE buyprod.buy_prod(+) = prod.prod_id
  FROM product LEFT OUTER JOIN cycle ON(product.pid = cycle.pid AND cid = 1);
  
  
- SELECT product.*, cycle.cid, NVL(cycle.day,0) day, NVL(cycle.cnt,0) cnt
- FROM product , cycle
+ SELECT *
+ FROM product;
+ 
+ SELECT *
+ FROM cycle;
+ 
+ SELECT *
+ FROM customer;
+ 
+ SELECT product.*, cycle.cid, NVL(cycle.day,0) day, NVL(cycle.cnt,0) cnt, customer.cnm
+ FROM product , cycle, customer
  WHERE product.pid = cycle.pid(+)
-  AND cid(+) = : cid;
+  AND cycle.cid(+) = : cid
+  AND :cid = customer.cid ;
+  
+  SELECT p.*, :cid, NVL(c.day,0) day, NVL(c.cnt, 0) cnt, r.cnm
+FROM product p, cycle c, customer r
+WHERE p.pid = c.pid(+) 
+    AND c.cid(+) = :cid
+    AND :cid = r.cid;
   
   JOIN 
   카테고리

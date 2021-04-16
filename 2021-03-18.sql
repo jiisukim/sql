@@ -228,7 +228,9 @@ if(expr1 == null)
     FROM emp;
     WHERE LOWER(ename)'smith'
     GRUP BY deptno
-    HAVING COUNT(*) >= 4;
+    HAVING COUNT(*) >= 4;   
+      /// HAVING 집계함수를 가지고 조건비교할 때 사용, WHERE절에서 집계함수 사용 불가
+      ///GROUP BY절과 함께 사용
     
     - 그룹함수에서 null 컬럼은 계산에서 제외된다
     - GROUP BY 절에 작성된 컬림 이외의 컬럼이 SELECT절에 올 수 없다.

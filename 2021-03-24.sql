@@ -175,7 +175,8 @@ FROM
 FROM emp
 GROUP BY deptno);
 
-
+SELECT*
+FROM product;
 
 SELECT pid, pnm, cid, cnm, day, cnt
 FROM(SELECT product.pid, pnm, NVL(cid, 1) cid1, NVL(day,0) day, NVL(cnt,0) cnt
@@ -217,3 +218,23 @@ FROM product
 WHERE pid NOT IN(SELECT pid
 FROM cycle
 WHERE cid = 1);
+
+"과제 outerjoin5]
+outerjoin4를 바탕으로 고객 이름 컬럼 추가하기"
+SELECT p.*, :cid, NVL(c.day, 0) day, NVL(c.cnt, 0) cnt, t.cnm
+FROM product p, cycle c, customer t
+WHERE p.pid = c.pid (+)
+    AND c.cid(+) =:cid
+    AND :cid = t.cid;
+    
+--
+
+SELECT p.*, :cid, NVL(c.day,0) day, NVL(c.cnt, 0) cnt, r.cnm
+FROM product p, cycle c, customer r
+WHERE p.pid = c.pid(+) 
+    AND c.cid(+) = :cid
+    AND :cid = r.cid;
+    
+    
+    SELECT * 
+    FROM customer
